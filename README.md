@@ -88,8 +88,7 @@ Authors
 </authors>
 ```
 
-Papers
-
+Paper structure
 
 Citations
 Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
@@ -100,8 +99,22 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 </citations>
 ```
 
+```xml
+<paper address="3KLQEuNXM3ZLSHrDoi6qA9HAwGSzsjVAVc" title="First paper">
+<citations>
+...
+</citations>
+<authors>
+...
+</authors>
+</paper>
+```
+
 Signing the paper
 Each author then signs the paper, and adds their signature in the signature attribute of the author element.
+
+Submit the paper
+
 
 ###Other:
 Tip for commit address
