@@ -3,7 +3,8 @@ Proof Of Citation
 
 ##Abstract
 
-Acedimic paper sumbission
+Acedimic paper sumbission... incentivise authors to submit quailty papers and reward them for this effort.
+By creating a protocol for submitting papers will allow developers to create solutions...
 
 ##Peer Review
 In the current model the original author does not know whom reviews the paper, or what their intrests are.
@@ -11,8 +12,8 @@ In the current model the original author does not know whom reviews the paper, o
 ##Revisions
 Revisiosn are not made public, only the final edited work is published.
 
-Solution
-Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.
+##Solution
+Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using Storj https://github.com/Storj/
 
 ##Normalised
 The meta data side change should be normailised to keep chains small.  Also, subscribers of the chain may only wish to download information that is of relevance.  Data should be nomailsed into XML structures.
@@ -59,7 +60,7 @@ Create the hash of the document using SHA-256.  Add the value as an attribute on
 </author>
 ```
 
-Sign the document and add attribute to the author element.
+Sign the document and add attribute to the author element.  *Note, this will create a different hash to what is stored in storj
 
 ```xml
 <author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf" version="Bitcoin-qt (1.0)" signature="G0xzGNeKfEwPz34Dr5lFwUhyCkj+KKSQGcaeQJ44cxzYPmVRJjw6kBgBBGwsnIWA0oqMrJAXJCNpbwW8anHaTjY=">
@@ -72,5 +73,25 @@ Sign the document and add attribute to the author element.
 <address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
 </author>
 ```
-Other:
+
+###Paper structure
+The xml document is a wrapper for the paper.  It provides indexable data and citations.
+
+Authors
+```xml
+<authors>
+<author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf"/>
+</authors>
+```
+
+Citations
+Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
+
+```xml
+<citations>
+<citation id="1">693bf1445c13c9c75eb292b3dd7256cbbfa89f4efa805fd8571064de938ae146</citation>
+</citations>
+```
+
+###Other:
 Tip for commit address
