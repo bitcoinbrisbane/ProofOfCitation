@@ -25,7 +25,7 @@ Categories can be submitted by
 
 ```xml
 <Category Lang="en-au">
-    <Name></Name>
+    <Name>Mathematics</Name>
     <Parent>hashofprevious</Parent>
 </Category>
 ```
@@ -74,6 +74,10 @@ Sign the document and add attribute to the author element.  *Note, this will cre
 </author>
 ```
 
+The hash of the document is the generated using SHA256.  Eg 65cc3475c0119d907ef1a8c45c0488f4d82b1ca65a9443023e82119a1cadde28
+
+This is the value that is entered to the OP_RETURN and used with storj.
+
 ###Paper structure
 The xml document is a wrapper for the paper.  It provides indexable data and citations.
 
@@ -84,6 +88,9 @@ Authors
 </authors>
 ```
 
+Papers
+
+
 Citations
 Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
 
@@ -92,6 +99,9 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 <citation id="1">693bf1445c13c9c75eb292b3dd7256cbbfa89f4efa805fd8571064de938ae146</citation>
 </citations>
 ```
+
+Signing the paper
+Each author then signs the paper, and adds their signature in the signature attribute of the author element.
 
 ###Other:
 Tip for commit address
