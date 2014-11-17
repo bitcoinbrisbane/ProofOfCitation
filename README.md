@@ -4,13 +4,13 @@ Proof Of Citation
 ##Abstract
 
 Acedimic paper sumbission... incentivise authors to submit quailty papers and reward them for this effort.
-By creating a protocol for submitting papers will allow developers to create solutions...
+By creating a protocol for submitting papers will allow developers to create solutions such as online paper viewers and browers, managed wallets, desktop and mobile apps.
 
 ##Peer Review
 In the current model the original author does not know whom reviews the paper, or what their intrests are.
 
 ##Revisions
-Revisiosn are not made public, only the final edited work is published.
+Revisions are not made public, only the final edited work is published.
 
 ##Solution
 Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using Storj https://github.com/Storj/
@@ -20,8 +20,14 @@ The meta data side change should be normailised to keep chains small.  Also, sub
 
 Why XML?
 
+##Coloured Coins / Colored Coins
+Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob/master/specification.mediawiki for document types
+1. Categories
+2. Authors
+3. Papers
+
 ##Categories
-Categories can be submitted by
+Categories can be submitted by.  Note, sub coloured coins could be used for "high level" categories to make parseing more efficient.  A user online intrested in mathematical science may not wish to download other sceintific papers.
 
 ```xml
 <Category Lang="en-au">
@@ -88,8 +94,6 @@ Authors
 </authors>
 ```
 
-Paper structure
-
 Citations
 Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
 
@@ -101,12 +105,15 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 
 ```xml
 <paper address="3KLQEuNXM3ZLSHrDoi6qA9HAwGSzsjVAVc" title="First paper">
-<citations>
-...
-</citations>
 <authors>
 ...
 </authors>
+<documents>
+<document provider="storj">75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3</document>
+<documents>
+<citations>
+...
+</citations>
 </paper>
 ```
 
@@ -115,6 +122,12 @@ Each author then signs the paper, and adds their signature in the signature attr
 
 Submit the paper
 
+##Role of the software
+1. Parse the bitcoin block chain looking for values in the OP_RETURN field
+2. 
+
+##Discussion
+Latex format for paper is to be considered.
 
 ###Other:
 Tip for commit address
