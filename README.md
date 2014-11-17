@@ -13,7 +13,7 @@ In the current model the original author does not know whom reviews the paper, o
 Revisions are not made public, only the final edited work is published.
 
 ##Solution
-Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using Storj https://github.com/Storj/
+Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using a provider such as Storj https://github.com/Storj/
 
 ##Normalised
 The meta data side change should be normailised to keep chains small.  Also, subscribers of the chain may only wish to download information that is of relevance.  Data should be nomailsed into XML structures.
@@ -120,11 +120,20 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 Signing the paper
 Each author then signs the paper, and adds their signature in the signature attribute of the author element.
 
-Submit the paper
+Submit the paper to provider
+
+##Peer review
+A review of a paper, is to simple cite and modify.
 
 ##Role of the software
-1. Parse the bitcoin block chain looking for values in the OP_RETURN field
-2. 
+1. Parse the bitcoin block chain looking for values in the OP_RETURN field.
+2. Download the meta data from the storage provider, such as storj and persist in local database if required.
+3. To provide users with an indexable and searchable interface.
+4. Show repuation.  A commonly cited paper should be of high value, such as Satoshis White Paper.
+5. Cointain coloured coins and provider tokens to enable users to submit work.
+
+##Author reputation
+
 
 ##Discussion
 Latex format for paper is to be considered.
