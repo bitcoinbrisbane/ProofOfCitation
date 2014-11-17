@@ -42,42 +42,46 @@ The author structure contains the authors bitcoin public key, and is signed with
 
 Create the structure
 ```xml
-<author>
-<name>Lucas Cullen</name>
+<Author>
+<Name>Lucas Cullen</Name>
 <bio>https://www.bitcoinbrisbane.com.au</bio>
 <contacts>
 <contact type="email">lucascullen@hotmail.com.au</contact>
 </contacts>
 <publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
 <address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
-</author>
+</Author>
 ```
 SHA-256
-Create the hash of the document using SHA-256.  Add the value as an attribute on the author.
+Create the hash of the document using SHA-256, and wrap the Author document in Submission tags.
 ```xml
-<author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf">
-<name>Lucas Cullen</name>
+<Submission type="Author" sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf">
+<Author>
+<Name>Lucas Cullen</Name>
 <bio>https://www.bitcoinbrisbane.com.au</bio>
 <contacts>
 <contact type="email">lucascullen@hotmail.com.au</contact>
 </contacts>
 <publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
 <address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
-</author>
+</Author>
+</Submission>
 ```
 
-Sign the document and add attribute to the author element.  *Note, this will create a different hash to what is stored in storj
+Sign the document and add attribute to the Submission element.  *Note, this will create a different hash to what is stored in storj
 
 ```xml
-<author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf" version="Bitcoin-qt (1.0)" signature="G0xzGNeKfEwPz34Dr5lFwUhyCkj+KKSQGcaeQJ44cxzYPmVRJjw6kBgBBGwsnIWA0oqMrJAXJCNpbwW8anHaTjY=">
+<Submission type="Author" sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf" version="Bitcoin-qt (1.0)" signature="G0xzGNeKfEwPz34Dr5lFwUhyCkj+KKSQGcaeQJ44cxzYPmVRJjw6kBgBBGwsnIWA0oqMrJAXJCNpbwW8anHaTjY=">
+<Author>
 <name>Lucas Cullen</name>
 <bio>https://www.bitcoinbrisbane.com.au</bio>
 <contacts>
 <contact type="email">lucascullen@hotmail.com.au</contact>
 </contacts>
 <publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
-<address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
-</author>
+<Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
+</Author>
+</Submission>
 ```
 
 The hash of the document is the generated using SHA256.  Eg 65cc3475c0119d907ef1a8c45c0488f4d82b1ca65a9443023e82119a1cadde28
@@ -89,36 +93,36 @@ The xml document is a wrapper for the paper.  It provides indexable data and cit
 
 Authors
 ```xml
-<authors>
-<author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf"/>
-</authors>
+<Authors>
+<Author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf"/>
+</Authors>
 ```
 
 Citations
 Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
 
 ```xml
-<citations>
-<citation id="1">693bf1445c13c9c75eb292b3dd7256cbbfa89f4efa805fd8571064de938ae146</citation>
-</citations>
+<Citations>
+<Citation id="1">693bf1445c13c9c75eb292b3dd7256cbbfa89f4efa805fd8571064de938ae146</citation>
+</Citations>
 ```
 
 ```xml
-<paper address="3KLQEuNXM3ZLSHrDoi6qA9HAwGSzsjVAVc" title="First paper">
-<authors>
+<Paper address="3KLQEuNXM3ZLSHrDoi6qA9HAwGSzsjVAVc" title="First paper">
+<Authors>
 ...
-</authors>
-<documents>
-<document provider="storj">75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3</document>
-<documents>
-<citations>
+</Authors>
+<Documents>
+<Document provider="storj">75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3</document>
+<Documents>
+<Citations>
 ...
-</citations>
-</paper>
+</Citations>
+</Paper>
 ```
 
 Signing the paper
-Each author then signs the paper, and adds their signature in the signature attribute of the author element.
+Each Author then signs the paper, and adds their signature in the signature attribute of the author element.
 
 Submit the paper to provider
 
