@@ -27,6 +27,13 @@ Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob
 2. Authors
 3. Papers
 
+##High level submission process
+1. Create the xml document
+2. Create the sha-256 hash
+3. Sign the document
+4. Submit to document repository, such as storj
+5. Record the sha-256 hash of the submitted document into the blockchain
+
 ##Taxonomy of a submission
 The following a valid Submission types
 1. Categories
@@ -34,7 +41,7 @@ The following a valid Submission types
 3. Paper
 
 ###Categories
-Categories can be submitted by...  Note, sub coloured coins could be used for "high level" categories to make parseing more efficient.  A user online intrested in mathematical science may not wish to download other sceintific papers.
+Categories can be submitted by...  Note, sub coloured coins could be used for "high level" categories to make parseing more efficient.  A user online intrested in mathematical science may not wish to download other scientific papers.
 
 ```xml
 <Category Langauge="en-au">
@@ -98,14 +105,14 @@ This is the value that is entered to the OP_RETURN and used with storj.
 ###Paper structure
 The xml document is a wrapper for the paper.  It provides indexable data and citations.
 
-Authors
+####Authors
 ```xml
 <Authors>
 <Author sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf"/>
 </Authors>
 ```
 
-Citations
+####Citations
 Papers are cited by sending a small (or large) bitcoin transaction from the papers public key to the address of the paper being cited.  This will "tip" the author for their paper.
 
 ```xml
