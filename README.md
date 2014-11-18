@@ -26,30 +26,36 @@ Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob
 2. Authors
 3. Papers
 
-##Categories
-Categories can be submitted by.  Note, sub coloured coins could be used for "high level" categories to make parseing more efficient.  A user online intrested in mathematical science may not wish to download other sceintific papers.
+##Taxomity of a submission
+The following a valid Submission types
+1. Categories
+2. Author
+3. Paper
+
+###Categories
+Categories can be submitted by...  Note, sub coloured coins could be used for "high level" categories to make parseing more efficient.  A user online intrested in mathematical science may not wish to download other sceintific papers.
 
 ```xml
-<Category Lang="en-au">
+<Category Langauge="en-au">
     <Name>Mathematics</Name>
     <Parent>hashofprevious</Parent>
 </Category>
 ```
 Todo: XML schema
 
-Authors
+###Author
 The author structure contains the authors bitcoin public key, and is signed with the private key for that address.
 
 Create the structure
 ```xml
 <Author>
 <Name>Lucas Cullen</Name>
-<bio>https://www.bitcoinbrisbane.com.au</bio>
-<contacts>
-<contact type="email">lucascullen@hotmail.com.au</contact>
-</contacts>
-<publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
-<address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
+<Bio>https://www.bitcoinbrisbane.com.au</Bio>
+<Contacts>
+<Contact type="email">lucascullen@hotmail.com.au</Contact>
+</Contacts>
+<Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
+<Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
 </Author>
 ```
 SHA-256
@@ -58,27 +64,27 @@ Create the hash of the document using SHA-256, and wrap the Author document in S
 <Submission type="Author" sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf">
 <Author>
 <Name>Lucas Cullen</Name>
-<bio>https://www.bitcoinbrisbane.com.au</bio>
-<contacts>
-<contact type="email">lucascullen@hotmail.com.au</contact>
-</contacts>
-<publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
-<address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</address>
+<Bio>https://www.bitcoinbrisbane.com.au</Bio>
+<Contacts>
+<Contact type="email">lucascullen@hotmail.com.au</Contact>
+</Contacts>
+<Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
+<Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
 </Author>
 </Submission>
 ```
 
-Sign the document and add attribute to the Submission element.  *Note, this will create a different hash to what is stored in storj
+Sign the document and add the signature attribute to the Submission element.  *Note, this will create a different hash to what is stored in storj
 
 ```xml
 <Submission type="Author" sha256="240934ec86f17126178e48c8c90d212bfca18148b30e2ff8ded1b51a662c80cf" version="Bitcoin-qt (1.0)" signature="G0xzGNeKfEwPz34Dr5lFwUhyCkj+KKSQGcaeQJ44cxzYPmVRJjw6kBgBBGwsnIWA0oqMrJAXJCNpbwW8anHaTjY=">
 <Author>
-<name>Lucas Cullen</name>
-<bio>https://www.bitcoinbrisbane.com.au</bio>
-<contacts>
-<contact type="email">lucascullen@hotmail.com.au</contact>
-</contacts>
-<publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</publickey>
+<Name>Lucas Cullen</Name>
+<Bio>https://www.bitcoinbrisbane.com.au</Bio>
+<Contacts>
+<Contact type="email">lucascullen@hotmail.com.au</Contact>
+</Contacts>
+<Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
 <Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
 </Author>
 </Submission>
@@ -137,7 +143,10 @@ A review of a paper, is to simple cite and modify.
 5. Cointain coloured coins and provider tokens to enable users to submit work.
 
 ##Author reputation
+Todo:
 
+##Risks
+Gaming the system...
 
 ##Discussion
 Latex format for paper is to be considered.
