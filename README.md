@@ -21,12 +21,13 @@ The meta data side change should be normailised to keep chains small.  Also, sub
 Why XML?
 
 ##Coloured Coins / Colored Coins
-Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob/master/specification.mediawiki for document types
+Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob/master/specification.mediawiki for document types;
+
 1. Categories
 2. Authors
 3. Papers
 
-##Taxomity of a submission
+##Taxonomy of a submission
 The following a valid Submission types
 1. Categories
 2. Author
