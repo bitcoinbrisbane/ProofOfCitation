@@ -135,13 +135,13 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 </Paper>
 ```
 
-Signing the paper
+####Signing the paper
 Each Author then signs the paper, and adds their signature in the signature attribute of the author element.
 
-Submit the paper to provider
+####Submit the paper to provider
 
 ##Peer review
-A review of a paper, is to simple cite and modify.
+A review of a paper is to simple cite and modify.  Thought:  There might be an oppertunity to cite and create that as part of the "next" document.  [75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3 p1-p2] could cite the above paper from page 1 to page 2.
 
 ##Role of the software
 1. Parse the bitcoin block chain looking for values in the OP_RETURN field.
