@@ -10,7 +10,7 @@ By creating a protocol for submitting papers will allow developers to create sol
 In the current model the original author does not know whom reviews the paper, or what their intrests are.
 
 ##Revisions
-Revisions are not made public, only the final edited work is published.
+Also, in the current model, revisions are not made public, only the final edited work is published.  With proof of citation, all revisions are added to the chain, citing the paper before.  Note:  There maybe an oppertunity for only detlas to be submited, and the software will reconstruct the final document.  To be discussed.
 
 ##Solution
 Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using a provider such as Storj https://github.com/Storj/
@@ -36,6 +36,7 @@ Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob
 
 ##Taxonomy of a submission
 The following a valid Submission types
+
 1. Categories
 2. Author
 3. Paper
@@ -60,7 +61,8 @@ Create the structure
 <Name>Lucas Cullen</Name>
 <Bio>https://www.bitcoinbrisbane.com.au</Bio>
 <Contacts>
-<Contact type="email">lucascullen@hotmail.com.au</Contact>
+<Contact type="email">paper@protonmail.com</Contact>
+<Contact type="bitmessage">BM-2cSuP6umWqxjLN7CBYK2qT8FvQhfqmyNVK</Contact>
 </Contacts>
 <Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
 <Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
@@ -74,7 +76,8 @@ Create the hash of the document using SHA-256, and wrap the Author document in S
 <Name>Lucas Cullen</Name>
 <Bio>https://www.bitcoinbrisbane.com.au</Bio>
 <Contacts>
-<Contact type="email">lucascullen@hotmail.com.au</Contact>
+<Contact type="email">paper@protonmail.com</Contact>
+<Contact type="bitmessage">BM-2cSuP6umWqxjLN7CBYK2qT8FvQhfqmyNVK</Contact>
 </Contacts>
 <Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
 <Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
@@ -90,7 +93,8 @@ Sign the document and add the signature attribute to the Submission element.  *N
 <Name>Lucas Cullen</Name>
 <Bio>https://www.bitcoinbrisbane.com.au</Bio>
 <Contacts>
-<Contact type="email">lucascullen@hotmail.com.au</Contact>
+<Contact type="email">paper@protonmail.com</Contact>
+<Contact type="bitmessage">BM-2cSuP6umWqxjLN7CBYK2qT8FvQhfqmyNVK</Contact>
 </Contacts>
 <Publickey>04c5e26011bd1680eff56a6ec50301e2a06e87cff792c9058e8b692cb47488a18b1d9e509d31c5b98248d9aed24e70512ef3b054f2f02afc8f5b54db5b3516fa0a</Publickey>
 <Address>16ZFPHneWK8umY2KbGSWm861uaL3q82dFw</Address>
@@ -127,7 +131,7 @@ Papers are cited by sending a small (or large) bitcoin transaction from the pape
 ...
 </Authors>
 <Documents>
-<Document provider="storj">75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3</document>
+<Document provider="storj" type="openoffice" version="1.2">75c766e2e2530d5f255954f3de784ef5997643200ac2b19c0b465cfd08247aa3</document>
 <Documents>
 <Citations>
 ...
