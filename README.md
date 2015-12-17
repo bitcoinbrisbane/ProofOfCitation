@@ -3,24 +3,23 @@ Proof Of Citation
 
 ##Abstract
 
-Acedimic paper sumbission... incentivise authors to submit quailty papers and reward them for this effort.
-By creating a protocol for submitting papers will allow developers to create solutions such as online paper viewers and browers, managed wallets, desktop and mobile apps.
+Perhaps we could think of this as a distributed wikipedia where authors get paid.  The current acedimic paper sumbission model has a number of problems.  Currently, only a few centralised actors are responsable for academic journals. This system incentivise authors to submit quailty papers and reward them for this effort.  The protocol for submitting papers will allow developers to create solutions such as online paper viewers and browers, managed wallets, desktop and mobile apps.
 
-##Peer Review
+##Current Peer Review
 In the current model the original author does not know whom reviews the paper, or what their intrests are.
 
 ##Revisions
-Also, in the current model, revisions are not made public, only the final edited work is published.  With proof of citation, all revisions are added to the chain, citing the paper before.  Note:  There maybe an oppertunity for only detlas to be submited, and the software will reconstruct the final document.  To be discussed.
+Also in the current model revisions are not made public. Only the final edited work is published.  With proof of citation, all revisions are added to the chain citing the paper before.  Note:  There maybe an oppertunity for only detlas to be submited, and the software will reconstruct the final document.  To be discussed.
 
 ##Solution
-Using coloured / colored coins to submit document SHA256 hashes into the block chain via the OP_RETURN field.  XML documents, papers and images to be distributed using a provider such as Storj https://github.com/Storj/
+Using coloured / colored coins or a counterparty token, authors can submit documents.  The SHA256 hashe is inserted into the block chain via the OP_RETURN field.  This approach is used by other systems like "Proof of Existance".  XML documents, papers and images to be distributed using a provider such as Storj using Storj-x token.  See https://github.com/Storj/
 
 ##Normalised
 The meta data side change should be normailised to keep chains small.  Also, subscribers of the chain may only wish to download information that is of relevance.  Data should be nomailsed into XML structures.
 
 Why XML?
 
-##Coloured Coins / Colored Coins
+##Coloured Coins / Colored Coins or Counterparty
 Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob/master/specification.mediawiki for document types;
 
 1. Categories
@@ -28,7 +27,7 @@ Different coloured coins https://github.com/OpenAssets/open-assets-protocol/blob
 3. Papers
 
 ##High level submission process
-1. Create the xml document
+1. Create the xml document meta data
 2. Create the sha-256 hash
 3. Sign the document
 4. Submit to document repository, such as storj
